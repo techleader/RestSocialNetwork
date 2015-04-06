@@ -1,0 +1,5 @@
+com\social\network\service\LoginController.class
+com\social\network\model\Friend.class
+com\social\network\service\Application.class
+com\social\network\service\HelloWebXml.class
+com\social\network\service\UserProfile.class
