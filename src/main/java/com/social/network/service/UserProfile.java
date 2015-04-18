@@ -1,5 +1,8 @@
 package com.social.network.service;
 
+import org.springframework.data.mongodb.core.mapping.Document;
+
+@Document(collection = "UsersProfiles")
 public class UserProfile {
 	    private long id;
 	    private String firstName;
