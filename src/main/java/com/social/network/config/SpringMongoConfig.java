@@ -21,4 +21,5 @@ public class SpringMongoConfig {
 		MongoTemplate mongoTemplate = new MongoTemplate(mongoDbFactory()); 
 		return mongoTemplate; 
 	}
+	
 }
