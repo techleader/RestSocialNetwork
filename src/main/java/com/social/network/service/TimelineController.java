@@ -38,7 +38,7 @@ public class TimelineController {
     	timeline.setTimelineId(UUID.randomUUID().toString());
     	timeline.setStatus(status);
     	timeline.setUserName(username);
-    	timeline.setImage("333.jpg");
+    	//timeline.setImage("333.jpg");
     	timeline.setDate(Calendar.getInstance().getTime());
     	dbHandler.saveTimeline(timeline);
     	return timeline;

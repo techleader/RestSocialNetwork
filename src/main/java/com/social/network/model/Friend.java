@@ -7,7 +7,7 @@ public class Friend {
 	String worksAt;
 	String image;
 
-	public Friend(String friendName, String liveat, String workAt,String image) {
+	public Friend(String friendName,String liveat, String workAt,String image) {
 		super();
 		this.friendName = friendName;
 		this.livesAt = liveat;
