@@ -15,7 +15,7 @@ public class FriendController {
     @RequestMapping("/friendlist")
     public List<Friend> getFriendList(@RequestParam(value="name", defaultValue="World") String name) {
     	List<Friend> friends = new ArrayList<Friend>();
-    	friends.add(new Friend("Rajesh Nayak", "work at hellonix soft" , "hanumangarh","raj.JPG"));
+    	friends.add(new Friend("Rahul Meena", "work at Girnar Technology" , "jaipur, India","rahul,kamina@gmail.com_image.jpg"));
     	friends.add(new Friend("Jawahar Nayak", "Software engineer at JP Morgan" , "Mumbai, India","jls.jpg"));
     	friends.add(new Friend("Anu nayak", "Resercher" , "Dhanbad,India","anu.jpg"));	
     	friends.add(new Friend("Rakesh Nayak", "work at Lipi data" , "Udaipur","rakesh.JPG"));	    

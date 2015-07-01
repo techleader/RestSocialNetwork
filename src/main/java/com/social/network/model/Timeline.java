@@ -12,6 +12,7 @@ public class Timeline {
 
 	String id;
 	String userName;
+	String userId;
 	Date date;
 	String image;
 	String status;
@@ -22,7 +23,15 @@ public class Timeline {
 		return id;
 	}
 
-	public void setTimelineId(String timelineId) {
+	public String getUserId() {
+		return userId;
+	}
+
+	public void setUserId(String userId) {
+		this.userId = userId;
+	}
+	
+	public void setId(String timelineId) {
 		this.id = timelineId;
 	}
 	

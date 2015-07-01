@@ -2,27 +2,26 @@ package com.social.network.service;
 
 import org.springframework.data.mongodb.core.mapping.Document;
 
-@Document(collection = "UserProfile")
-public class UserProfile {
+@Document(collection = "Users")
+public class User {
 	    private String id;
-	    private String firstName;
+	    private String name;
 	    private String email;
 	    private String password;
-	   
-	    
-	    public String getId() {
+ 	    
+		public String getId() {
 			return id;
 		}
 		public void setId(String id) {
 			this.id = id;
 		}
-		public String getFirstName() {
-			return firstName;
-		}
-		public void setFirstName(String firstName) {
-			this.firstName = firstName;
-		}
 		
+		public String getName() {
+			return name;
+		}
+		public void setName(String name) {
+			this.name = name;
+		}
 		public String getPassword() {
 			return password;
 		}

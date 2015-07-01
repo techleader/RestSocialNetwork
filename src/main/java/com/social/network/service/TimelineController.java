@@ -1,6 +1,7 @@
 package com.social.network.service;
 
 import java.util.Calendar;
+import java.util.Date;
 import java.util.List;
 import java.util.UUID;
 
@@ -22,34 +23,35 @@ public class TimelineController {
 	
     @RequestMapping("/listAllTimeLines")
     public List<Timeline> listAllTimelines() {    	
-    	return dbHandler.getAllTimeLines();
-    	
+    	return dbHandler.getAllTimeLines();   	
     }  
     /*@RequestMapping(value = "/addTimeLine", method = RequestMethod.POST)	
     public  @ResponseBody String addTimeLine( @RequestBody Timeline timeline ) {
     	return timeline.getStatus() + timeline.getUserName();
-    }*/
+    }*/ 
     
     @RequestMapping(value="/addTimeLine", method = RequestMethod.GET)
     public Timeline addTimeLine(@RequestParam(value="status") String status,
-    		@RequestParam(value="username") String username
+    		@RequestParam(value="username") String username,
+    		@RequestParam(value="userid") String userId
     		) {
     	Timeline timeline = new Timeline();
-    	timeline.setTimelineId(UUID.randomUUID().toString());
+    	timeline.setId(UUID.randomUUID().toString());
     	timeline.setStatus(status);
     	timeline.setUserName(username);
-    	//timeline.setImage("333.jpg");
+    	timeline.setUserId(userId);
     	timeline.setDate(Calendar.getInstance().getTime());
     	dbHandler.saveTimeline(timeline);
     	return timeline;
     }
     
     @RequestMapping("/addImage")
-    public Timeline addImage(@RequestParam(value="username") String username
+    public Timeline addImage(@RequestParam(value="username") String username,
+    		@RequestParam(value="userid") String userId
     		) {
     	Timeline timeline = new Timeline();
     	String id=UUID.randomUUID().toString();
-    	timeline.setTimelineId(UUID.randomUUID().toString());
+    	timeline.setId(UUID.randomUUID().toString());
     	timeline.setUserName(username);
     	timeline.setImage(id+"-image");
     	timeline.setDate(Calendar.getInstance().getTime());
@@ -59,6 +61,7 @@ public class TimelineController {
   
     @RequestMapping("/addCommentToTimeline")
     public Timeline addCommentToTimeLine(@RequestParam(value="comment") String comment,
+    		@RequestParam(value="userid") String userId,
     		@RequestParam(value="username") String username,
     		@RequestParam(value="timelineid") String timelineid
     	) {
@@ -66,6 +69,9 @@ public class TimelineController {
     	Comment commentToBeAdded = new Comment();
     	commentToBeAdded.setId(UUID.randomUUID().toString());
     	commentToBeAdded.setText(comment);
+    	commentToBeAdded.setUserId(userId);
+    	commentToBeAdded.setUsername(username);
+    	commentToBeAdded.setCommentTime(new Date());
     	timeline.addComment(commentToBeAdded);
     	dbHandler.saveTimeline(timeline);
     	return timeline;
