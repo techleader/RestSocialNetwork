@@ -25,6 +25,7 @@
 			<groupId>javax.servlet</groupId>
 			<artifactId>javax.servlet-api</artifactId>
 			<version>3.1.0</version>
+			<scope>provided</scope>
 		</dependency>
         <!-- Jackson -->
         <dependency>
@@ -119,6 +120,7 @@
 				<artifactId>maven-war-plugin</artifactId>
 				<configuration>
 					<webXml>WebContent\WEB-INF\web.xml</webXml>
+					<attachClasses>true</attachClasses>
 				</configuration>
 			</plugin>		
         </plugins>
